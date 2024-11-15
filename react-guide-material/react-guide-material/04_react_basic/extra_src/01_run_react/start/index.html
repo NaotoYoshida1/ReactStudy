@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--宣言の順番が重要だから注意-->
+    <script src="/libs/react.development.js"></script>
+    <script src="/libs/react-dom.development.js"></script>
+    <script src="/libs/babel-standalone.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        const appEl = document.querySelector('#app');
+        const root = ReactDOM.createRoot(appEl);
+        // function Example(){
+        //     return <h1>Hello Example</h1>;
+        // }
+        const Example = () => {
+            return <h1>Hello Example</h1>;
+            // 複数行を記載する方法
+            // return (
+            //     <div>
+            //         <h1>Hello Example</h1>;
+            //     </div>
+            // )
+        }
+        root.render(<h1>こんにちは</h1>);
+        root.render(<Example />);
+    </script>
+</body>
+</html>
