@@ -5,11 +5,22 @@
 
 import "./Child.css";
 
-const Child = (props) => {
-  console.log(props);
+// const Child = (props) => {
+//   console.log(props);
+//   return (
+//     <div className={`component ${props.color}`}>
+//       <h3>Hello Component</h3>
+//     </div>
+//   );
+// };
+const Child = ({ color:c = 'green', num, fn }) => {
   return (
-    <div className={`component ${props.color}`}>
+    // <div className={`component ${props.color}`}>
+    <div className={`component ${c}`}>
       <h3>Hello Component</h3>
+      <h3>{num}</h3>
+      <h3>{fn('Props')}</h3>
+      {/* <h3>{fn('Props')}</h3> */}
     </div>
   );
 };
