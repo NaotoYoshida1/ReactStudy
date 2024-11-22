@@ -5,7 +5,7 @@ const Example = () => {
   return (
     <>
       <button onClick={clickHandler}>クリックしてね</button>
-      <button onClick={clickHandler}>クリックしてね</button>
+      <button onChange={()=>console.log(e.target.value)}>クリックしてね</button>
     </>
   );
 };
