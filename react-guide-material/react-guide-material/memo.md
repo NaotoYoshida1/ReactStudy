@@ -124,3 +124,21 @@ JSのオブジェクトを変換するときに利用するライブラリ
 	★更新方法
 		変数を更新するための関数名(更新処理);
 
+■コンポーネントを分けて記述する際の記述方法
+	★自分がミスしまくったところ
+		引数の記述方法
+		const CountUpdate = ({count, setCount}) => {
+			const countUp = () => {
+				setCount(count + 1)
+			};
+			const countDown = () => {
+				setCount(count - 1) 
+			};
+			return (
+				<>
+				<button onClick={countUp}>+</button>
+				<button onClick={countDown}>-</button>
+				</>
+			);
+		};
+
