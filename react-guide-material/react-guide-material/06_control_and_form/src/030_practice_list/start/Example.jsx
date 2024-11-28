@@ -1,4 +1,23 @@
-import {Profile} from "./components/Profile";
+import Profile from "./components/Profile";
+
+// const nameList = ['Geo', 'Tom', 'Lisa'];
+const person = [
+  {
+    name    : "Geo",
+    age     : "18",
+    hobbies : ["sports","music"]
+  },
+  {
+    name    : "Tom",
+    age     : "25",
+    hobbies : ["movie", "music"]
+  },
+  {
+    name    : "Lisa",
+    age     : "21",
+    hobbies : ["sports", "travel", "game"]
+  }
+]
 
 const Example = () => {
   return (
@@ -8,7 +27,12 @@ const Example = () => {
       <p>また、Profileコンポーネント内のリスト表示部分にkeyを設定して、ワーニング表示がされないようにしてください。</p>
       <ul>
         {/* ここに記述 */}
-        {<Profile name="" age="" hobbies="" />}
+        {/* {<Profile name={nameList} age="" hobbies="" />} */}
+        {person.map((personSingle) => (
+          <li key={personSingle.name}>
+            <Profile {...personSingle} />
+          </li>
+        ))}
       </ul>
     </>
   );
