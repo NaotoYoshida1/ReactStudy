@@ -1,3 +1,5 @@
+import {Profile} from "./components/Profile";
+
 const Example = () => {
   return (
     <>
@@ -6,6 +8,7 @@ const Example = () => {
       <p>また、Profileコンポーネント内のリスト表示部分にkeyを設定して、ワーニング表示がされないようにしてください。</p>
       <ul>
         {/* ここに記述 */}
+        {<Profile name="" age="" hobbies="" />}
       </ul>
     </>
   );
