@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AnimalList from "./components/AnimalList";
+import AnimalFilter from "./components/AnimalFilter"
 
 const Example = () => {
   const animals = ["Dog", "Cat", "Rat"];
@@ -11,13 +12,11 @@ const Example = () => {
     return isMatch;
   });
 
+  // AnimalFilter => 入力欄の出力用コンポーネント
+  // AnimalList => List表示の形式の役割
   return (
     <>
-      <input
-        type="text"
-        value={filterVal}
-        onChange={(e) => setFilterVal(e.target.value)}
-      />
+    <AnimalFilter filterState={[filterVal, setFilterVal]} />
     <AnimalList animals={filteredAnimals} />
     </>
   );
