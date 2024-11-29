@@ -9,7 +9,8 @@ const Example = () => {
   const filteredAnimals = animals.filter((animal) => {
     const isMatch = animal.indexOf(filterVal) !== -1;
     return isMatch;
-  })
+  });
+
   return (
     <>
       <input

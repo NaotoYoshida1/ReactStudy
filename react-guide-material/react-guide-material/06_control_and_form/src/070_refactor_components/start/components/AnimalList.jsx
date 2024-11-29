@@ -11,7 +11,7 @@ const AnimalList = ({animals}) => {
               );
             })}
         </ul>
-    )
+    );
 };
 
 export default AnimalList;
