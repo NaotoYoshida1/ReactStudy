@@ -142,3 +142,25 @@ JSのオブジェクトを変換するときに利用するライブラリ
 			);
 		};
 
+■スタイルをJSの中に記載する方法
+	styled componentsというライブラリを使用する
+		インストールコマンド
+			npm i styled-components
+	
+■動的なスタイルを適用する方法
+	import styled from "styled-components";
+	const styledButton = styled.button`
+		color: white;
+	background-color: ${(props) => (props.dark ? "black" : "green")};
+	`;
+
+	${}: テンプレートリテラル内でJavaScriptの式を実行します
+	(props) => ...: props を受け取り、その値に基づいて結果を返す関数です
+	ここでは、呼び出し元のコンポーネントのprops.dark の値を評価して、背景色を切り替える
+		⇒trueになる場合
+			<ThirdButton dark>ボタン3 dark</ThirdButton>
+
+■chakra UI をインストールする方法
+	公式ドキュメントからインストール方法は検索する
+	npm installからも可能
+	

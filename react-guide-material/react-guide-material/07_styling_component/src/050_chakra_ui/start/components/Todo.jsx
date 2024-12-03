@@ -1,6 +1,7 @@
 import { useState } from "react"
 import List from "./List"
 import Form from "./Form"
+import { Heading, VStack } from "@chakra-ui/react";
 
 const Todo = () => {
   const todosList = [
@@ -34,8 +35,11 @@ const Todo = () => {
 
   return (
     <>
-      <List todos={todos} deleteTodo={deleteTodo}/>
-      <Form createTodo={createTodo}/>
+      <VStack p="10" spacing="10">
+        <Heading>Reminder</Heading>
+        <List todos={todos} deleteTodo={deleteTodo}/>
+        <Form createTodo={createTodo}/>
+      </VStack>
     </>
   )
 };
