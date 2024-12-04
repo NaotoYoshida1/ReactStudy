@@ -1,9 +1,16 @@
 import { useState, useRef, forwardRef, useImperativeHandle } from "react";
 
 const Video = forwardRef(({ path }, ref) => {
+  const videoRef = useRef();
 
   useImperativeHandle(ref, () => ({
-    
+    // 追加箇所
+    play() {
+      videoRef.current.play();
+    },
+    stop(){
+      video.current.pause();
+    }
   }));
 
   return (
@@ -26,9 +33,16 @@ const Example = () => {
       <Video ref={ref} path="./sample.mp4" />
       <button
         onClick={() => {
+          // 追加箇所
+          if(playing){
+            ref.current.stop();
+          }else{
+            ref.current.start();
+          }
           setPlaying((prev) => !prev);
         }}
       >
+        {/* ボタンの表記 */}
         {playing ? "Stop" : "Play"}
       </button>
     </div>
